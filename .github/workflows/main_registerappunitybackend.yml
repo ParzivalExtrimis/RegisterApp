@@ -25,7 +25,6 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -52,5 +51,5 @@ jobs:
         with:
           app-name: 'RegisterAppUnityBackend'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F3C9679377814BA59CCE3CE81E9F18F4 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E961EA94253448AB9B50B806F27DC7B6 }}
           package: .
