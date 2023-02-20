@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    const success_page = "/success.html"
+    
     const form = document.querySelector('#form');
     const button = document.querySelector('#submit');
 
@@ -70,22 +72,32 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             body: json
         })
-        .then(response => {
-            console.log(response.status); // logs 201
-            console.log(response.headers.get('Content-Type')); // logs "application/json"
-            return response.json();
-          })
-          .then(data => {
-            console.log(data); // logs the parsed JSON response data
-          })
-          .catch(error => {
-            console.error(error);
-          });
+            .then(response => {
+                console.log(response.status);
+                if (response.ok) {
+                    alert("Registration Successful");
+                    loadSuccessPage();
+                }
+                if (response.headers.get('Content-Type') == 'application/json') {
+                    return response.json();
+                }
+                console.log(response.headers.get('Content-Type')); // logs "application/json"
+            })
+            .then(data => {
+                console.log(data); // logs the parsed JSON response data
+            })
+            .catch(error => {
+                console.error(error);
+            });
     });
 
     function validateEmail(email) {
         const regex = /\S+@\S+\.\S+/;
         return regex.test(email);
+    }
+
+    function loadSuccessPage() {
+        window.location.href = success_page;
     }
 
 });

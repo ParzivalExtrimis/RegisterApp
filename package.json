@@ -1,0 +1,22 @@
+{
+  "name": "unityregisterapp",
+  "version": "1.0.0",
+  "description": "Registration endpoint for Unity VR Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParzivalExtrimis/RegisterApp.git"
+  },
+  "author": "Aryan Hegde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ParzivalExtrimis/RegisterApp/issues"
+  },
+  "homepage": "https://github.com/ParzivalExtrimis/RegisterApp#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
